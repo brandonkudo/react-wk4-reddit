@@ -10,7 +10,10 @@ function Banner(props){
       width: '100vw',
       textAlign: 'center',
       backgroundImage: 'url('+banner+')',
-      height: '100vh'
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      height: '500px'
     },
     childStyles: {
       position: 'absolute',
@@ -20,11 +23,8 @@ function Banner(props){
       zIndex: '1',
       color: '#000',
       fontSize: '120px',
-      textAlign: 'center'
-    },
-    imageStyles: {
-      width: '100vw',
-      zIndex: '0'
+      textAlign: 'center',
+      color: 'rgba(255, 255, 255, 0.8)'
     }
   }
 
