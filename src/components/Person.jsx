@@ -16,6 +16,6 @@ Person.propTypes = {
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   bio: PropTypes.string.isRequired
-}
+};
 
 export default Person;

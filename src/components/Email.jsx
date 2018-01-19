@@ -2,8 +2,8 @@ import React from 'react';
 
 function Email() {
   const styles = {
-    backgroundColor: 'black'
-  }
+    color: 'red'
+  };
   return(
     <div>
       <h1 style={styles}>Email</h1>

@@ -26,14 +26,14 @@ function Banner(props){
       textAlign: 'center',
       color: 'rgba(255, 255, 255, 0.8)'
     }
-  }
+  };
 
 
   return(
     <div style={styles.parentStyles}>
       <h1 style={styles.childStyles}>{props.bannerText}</h1>
     </div>
-  )
+  );
 }
 
 export default Banner;
