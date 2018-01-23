@@ -1,25 +1,40 @@
 import React from 'react';
 import Header from './Header';
-import AboutUs from './AboutUs';
-import Splash from './Splash';
-import Contact from './Contact';
-import Email from './Email';
+import PostList from './PostList';
 import Error404 from './Error404';
-import {  Switch, Route } from 'react-router-dom';
+import NewPostControl from './NewPostControl';
+import { Switch, Route } from 'react-router-dom';
 
-function App(){
-  return(
-    <div>
-      <Header/>
-      <Switch>
-        <Route exact path='/' component={Splash} />
-        <Route path='/AboutUs' component={AboutUs} />
-        <Route exact path='/Contact' component={Contact} />
-        <Route path='/Contact/Email' component={Email} />
-        <Route component={Error404} />
-      </Switch>
-    </div>
-  );
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      masterPostList: []
+    };
+    this.handleAddPostToList = this.handleAddPostToList.bind(this);
+  }
+
+  handleAddPostToList(newPost) {
+    let newMasterPostList = this.state.masterPostList.slice();
+    newMasterPostList.push(newPost);
+    this.setState({masterPostList: newMasterPostList});
+  }
+
+  render(){
+    return(
+      <div>
+        <Header/>
+        <Switch>
+          <Route exact path='/' render={()=><PostList postList={this.state.masterPostList} />} />
+          <Route path='/newpost' render={()=><NewPostControl onPostCreation={this.handleAddPostToList} />} />
+          <Route component={Error404} />
+        </Switch>
+      </div>
+    );
+  }
 }
+
+
 
 export default App;
