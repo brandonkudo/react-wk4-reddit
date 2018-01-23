@@ -21,6 +21,8 @@ class App extends React.Component {
     this.setState({masterPostList: newMasterPostList});
   }
 
+
+
   render(){
     return(
       <div>
